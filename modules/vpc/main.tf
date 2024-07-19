@@ -117,6 +117,7 @@ resource "aws_flow_log" "main" {
   log_destination_type = "cloud-watch-logs"
   traffic_type         = "ALL"
   vpc_id               = aws_vpc.main.id
+  iam_role_arn         = aws_iam_role.flow_log[0].arn  # Add this line
 
   tags = {
     Name = "vpc-flow-log"
