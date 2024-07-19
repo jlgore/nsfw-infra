@@ -36,13 +36,20 @@ variable "flow_log_retention_in_days" {
   default     = 7
 }
 
+variable "vpc_name" {
+  description = "Name of the VPC"
+  type        = string
+  default     = "main-vpc"
+  
+}
+
 resource "aws_vpc" "main" {
   cidr_block           = var.vpc_cidr
   enable_dns_hostnames = true
   enable_dns_support   = true
 
   tags = {
-    Name = "main-vpc"
+    Name = var.vpc_name
   }
 }
 

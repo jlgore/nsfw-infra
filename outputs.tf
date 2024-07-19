@@ -14,10 +14,6 @@ output "private_subnet_ids" {
   value       = module.vpc.private_subnet_ids
 }
 
-output "vpc_cidr_block" {
-  description = "The CIDR block of the VPC"
-  value       = module.vpc.vpc_cidr_block
-}
 
 output "vpc_flow_log_group_name" {
   description = "The name of the CloudWatch Log Group for VPC Flow Logs"
